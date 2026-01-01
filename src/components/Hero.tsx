@@ -43,7 +43,6 @@ const Hero = () => {
 
           {/* Heading */}
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Teaching Kids About{" "}
             <span className="text-gradient">Sustainable AI</span>
             <br />
             for a Better Future
