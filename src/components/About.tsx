@@ -29,36 +29,34 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 border-t border-border">
+    <section id="about" className="py-14 md:py-18 border-t border-border">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="section-header">
-          <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <p className="text-xs font-medium text-primary mb-2 uppercase tracking-wider">
             About This Project
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-3">
             Building a Bridge Between AI & Sustainability
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             This platform combines my passion for technology and my dream of becoming a pediatrician—focusing on the wellbeing of children in an AI-powered world.
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-3 max-w-4xl mx-auto">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="hextra-feature-card flex items-start gap-5"
+              className="hextra-feature-card flex items-start gap-4 !p-5"
             >
-              <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                <feature.icon className="w-5 h-5 text-primary" />
+              <div className="flex-shrink-0 w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center">
+                <feature.icon className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-1.5 tracking-tight">
+                <h3 className="text-sm font-semibold mb-1 tracking-tight">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-xs leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -66,13 +64,12 @@ const About = () => {
           ))}
         </div>
 
-        {/* Personal Note */}
-        <div className="mt-16 max-w-3xl mx-auto">
-          <div className="border border-border rounded-xl p-8 md:p-10 text-center bg-secondary/30">
-            <blockquote className="text-lg italic text-foreground/90 mb-4 leading-relaxed">
+        <div className="mt-10 max-w-2xl mx-auto">
+          <div className="border border-border rounded-xl p-6 text-center bg-secondary/30">
+            <blockquote className="text-sm italic text-foreground/90 mb-2 leading-relaxed">
               "I believe that by understanding how AI impacts our planet and our health, kids can grow up to be thoughtful innovators who use technology for good."
             </blockquote>
-            <p className="text-muted-foreground text-sm font-medium">
+            <p className="text-muted-foreground text-xs font-medium">
               — Founder, Sustainable AI for Kids
             </p>
           </div>

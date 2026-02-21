@@ -16,46 +16,30 @@ const Newsletter = () => {
   };
 
   return (
-    <section id="newsletter" className="py-20 md:py-28 bg-secondary/30 border-t border-border">
+    <section id="newsletter" className="py-14 md:py-18 bg-secondary/30 border-t border-border">
       <div className="container mx-auto px-4">
-        <div className="max-w-xl mx-auto text-center">
-          {/* Header */}
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
-            Stay Updated
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            Get the latest articles, resources, and updates about sustainable AI—delivered to your inbox. Perfect for kids, parents, and teachers.
+        <div className="max-w-md mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-3">Stay Updated</h2>
+          <p className="text-sm text-muted-foreground mb-6">
+            Get the latest articles, resources, and updates about sustainable AI—delivered to your inbox.
           </p>
 
-          {/* Form */}
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="flex gap-3 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="h-10"
-                required
-              />
-              <Button type="submit" className="flex-shrink-0 gap-2">
-                Subscribe
-                <Send className="w-3.5 h-3.5" />
+            <form onSubmit={handleSubmit} className="flex gap-2">
+              <Input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} className="h-9 text-sm" required />
+              <Button type="submit" size="sm" className="flex-shrink-0 gap-1.5">
+                Subscribe <Send className="w-3 h-3" />
               </Button>
             </form>
           ) : (
-            <div className="border border-border rounded-xl p-8 max-w-md mx-auto bg-card">
-              <CheckCircle2 className="w-10 h-10 text-primary mx-auto mb-3" />
-              <h3 className="text-lg font-semibold mb-1">You're In!</h3>
-              <p className="text-muted-foreground text-sm">
-                Thanks for subscribing. We'll keep you updated with the latest content.
-              </p>
+            <div className="border border-border rounded-xl p-6 bg-card">
+              <CheckCircle2 className="w-8 h-8 text-primary mx-auto mb-2" />
+              <h3 className="text-sm font-semibold mb-1">You're In!</h3>
+              <p className="text-muted-foreground text-xs">Thanks for subscribing. We'll keep you updated.</p>
             </div>
           )}
 
-          <p className="text-xs text-muted-foreground mt-4">
-            No spam, ever. Unsubscribe anytime.
-          </p>
+          <p className="text-[10px] text-muted-foreground mt-3">No spam, ever. Unsubscribe anytime.</p>
         </div>
       </div>
     </section>
