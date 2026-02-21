@@ -20,73 +20,34 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-border py-12">
+    <footer className="border-t border-border py-8">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-10 mb-10">
-          {/* Brand */}
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <a href="#home" className="flex items-center gap-2 mb-3">
-              <Leaf className="w-4 h-4 text-primary" />
-              <span className="font-semibold text-sm text-foreground">
-                SustainableAIforKids
-              </span>
+            <a href="#home" className="flex items-center gap-1.5 mb-2">
+              <Leaf className="w-3.5 h-3.5 text-primary" />
+              <span className="font-semibold text-xs text-foreground">SustainableAIforKids</span>
             </a>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Empowering the next generation to understand AI and sustainability.
-            </p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Empowering the next generation to understand AI and sustainability.</p>
           </div>
-
-          {/* Explore */}
-          <div>
-            <h4 className="font-semibold text-sm mb-3">Explore</h4>
-            <ul className="space-y-2">
-              {links.explore.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="font-semibold text-sm mb-3">Resources</h4>
-            <ul className="space-y-2">
-              {links.resources.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Connect */}
-          <div>
-            <h4 className="font-semibold text-sm mb-3">Connect</h4>
-            <ul className="space-y-2">
-              {links.connect.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
-                  >
-                    {link.name}
-                    {link.href.startsWith("mailto") && <ExternalLink className="w-3 h-3" />}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {Object.entries(links).map(([key, items]) => (
+            <div key={key}>
+              <h4 className="font-semibold text-xs mb-2 capitalize">{key}</h4>
+              <ul className="space-y-1.5">
+                {items.map((link) => (
+                  <li key={link.name}>
+                    <a href={link.href} className="text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
+                      {link.name}
+                      {link.href.startsWith("mailto") && <ExternalLink className="w-2.5 h-2.5" />}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-
-        <div className="pt-6 border-t border-border">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Sustainable AI for Kids. All rights reserved.
-          </p>
+        <div className="pt-4 border-t border-border">
+          <p className="text-[10px] text-muted-foreground">© {new Date().getFullYear()} Sustainable AI for Kids. All rights reserved.</p>
         </div>
       </div>
     </footer>

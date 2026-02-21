@@ -5,25 +5,25 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center justify-center pt-24 pb-20 md:pt-32 md:pb-28"
+      className="relative flex items-center justify-center pt-16 pb-12 md:pt-20 md:pb-16"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 border border-border rounded-full px-4 py-1.5 mb-8 text-sm text-muted-foreground">
+          <div className="inline-flex items-center gap-2 border border-border rounded-full px-3 py-1 mb-5 text-xs text-muted-foreground">
             <span className="w-1.5 h-1.5 bg-primary rounded-full" />
             Empowering the next generation
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.1] mb-4">
             Sustainable AI{"\n"}
             <br />
             <span className="text-primary">for a Better Future</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
             Discover how artificial intelligence can help protect our planet while keeping children safe, informed, and inspired about technology's role in sustainability.
           </p>
 
@@ -39,17 +39,17 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-20 max-w-md mx-auto">
+          <div className="grid grid-cols-3 gap-6 mt-12 max-w-sm mx-auto">
             {[
               { value: "50+", label: "Resources" },
               { value: "6-12", label: "Age Group" },
               { value: "100%", label: "Free Access" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl font-bold tracking-tight text-foreground">
+                <div className="text-2xl font-bold tracking-tight text-foreground">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">
+                <div className="text-xs text-muted-foreground mt-0.5">
                   {stat.label}
                 </div>
               </div>
