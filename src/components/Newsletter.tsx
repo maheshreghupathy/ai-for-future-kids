@@ -45,7 +45,7 @@ const Newsletter = () => {
             </form>
           ) : (
             <div className="border border-border rounded-xl p-8 max-w-md mx-auto bg-card">
-              <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-3" />
+              <CheckCircle2 className="w-10 h-10 text-primary mx-auto mb-3" />
               <h3 className="text-lg font-semibold mb-1">You're In!</h3>
               <p className="text-muted-foreground text-sm">
                 Thanks for subscribing. We'll keep you updated with the latest content.

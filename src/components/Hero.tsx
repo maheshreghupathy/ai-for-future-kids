@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 border border-border rounded-full px-4 py-1.5 mb-8 text-sm text-muted-foreground">
-            <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+            <span className="w-1.5 h-1.5 bg-primary rounded-full" />
             Empowering the next generation
           </div>
 
