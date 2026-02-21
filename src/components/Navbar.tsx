@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X, Leaf, Cpu } from "lucide-react";
+import { Menu, X, Leaf } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Resources", href: "#resources" },
     { name: "Blog", href: "#blog" },
@@ -14,17 +12,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/30">
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 group">
-            <div className="relative">
-              <Leaf className="w-7 h-7 text-accent transition-transform group-hover:scale-110" />
-              <Cpu className="w-4 h-4 text-primary absolute -bottom-1 -right-1" />
-            </div>
-            <span className="font-display font-bold text-lg md:text-xl text-foreground">
-              Sustainable<span className="text-gradient">AI</span>forKids
+          <a href="#home" className="flex items-center gap-2">
+            <Leaf className="w-5 h-5 text-primary" />
+            <span className="font-semibold text-foreground tracking-tight">
+              SustainableAIforKids
             </span>
           </a>
 
@@ -34,14 +29,11 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors font-medium text-sm"
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
               >
                 {link.name}
               </a>
             ))}
-            <Button variant="hero" size="sm">
-              Join Us
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -49,27 +41,24 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 text-foreground"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border/30 animate-fade-in">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden py-4 border-t border-border">
+            <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-muted-foreground hover:text-primary transition-colors font-medium py-2"
+                  className="text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors text-sm py-2 px-3 rounded-md"
                 >
                   {link.name}
                 </a>
               ))}
-              <Button variant="hero" className="mt-2">
-                Join Us
-              </Button>
             </div>
           </div>
         )}

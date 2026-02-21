@@ -29,20 +29,15 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 pattern-grid" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="about" className="py-20 md:py-28 border-t border-border">
+      <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
+        <div className="section-header">
+          <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">
             About This Project
-          </span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">
-            Building a Bridge Between{" "}
-            <span className="text-gradient">AI & Sustainability</span>
+          </p>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+            Building a Bridge Between AI & Sustainability
           </h2>
           <p className="text-lg text-muted-foreground">
             This platform combines my passion for technology and my dream of becoming a pediatrician—focusing on the wellbeing of children in an AI-powered world.
@@ -50,25 +45,22 @@ const About = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {features.map((feature, index) => (
+        <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+          {features.map((feature) => (
             <div
               key={feature.title}
-              className="glass-card p-8 group hover:scale-[1.02] transition-all duration-300"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="hextra-feature-card flex items-start gap-5"
             >
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 w-14 h-14 gradient-hero rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-display text-xl font-semibold mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+              <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                <feature.icon className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-1.5 tracking-tight">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}
@@ -76,11 +68,11 @@ const About = () => {
 
         {/* Personal Note */}
         <div className="mt-16 max-w-3xl mx-auto">
-          <div className="glass-card p-8 md:p-10 text-center border-2 border-primary/20">
-            <blockquote className="text-lg md:text-xl italic text-foreground/90 mb-4">
+          <div className="border border-border rounded-xl p-8 md:p-10 text-center bg-secondary/30">
+            <blockquote className="text-lg italic text-foreground/90 mb-4 leading-relaxed">
               "I believe that by understanding how AI impacts our planet and our health, kids can grow up to be thoughtful innovators who use technology for good."
             </blockquote>
-            <p className="text-muted-foreground font-medium">
+            <p className="text-muted-foreground text-sm font-medium">
               — Founder, Sustainable AI for Kids
             </p>
           </div>

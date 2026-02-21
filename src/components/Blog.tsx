@@ -33,19 +33,15 @@ const Blog = () => {
   ];
 
   return (
-    <section id="blog" className="py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 pattern-dots opacity-30" />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-3xl -translate-y-1/2" />
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="blog" className="py-20 md:py-28 border-t border-border">
+      <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
+        <div className="section-header">
+          <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">
             Original Content
-          </span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">
-            From My <span className="text-gradient">Blog</span>
+          </p>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+            From the Blog
           </h2>
           <p className="text-lg text-muted-foreground">
             Original articles and insights about AI, sustainability, and technology—written to inspire curious young minds.
@@ -55,60 +51,60 @@ const Blog = () => {
         {/* Blog Grid */}
         <div className="max-w-5xl mx-auto">
           {/* Featured Post */}
-          <article className="glass-card p-8 md:p-10 mb-8 group hover:scale-[1.01] transition-all duration-300 border-2 border-primary/20">
-            <div className="flex flex-col md:flex-row gap-8">
+          <article className="border border-border rounded-xl p-8 mb-6 group hover:border-primary/30 transition-colors bg-card">
+            <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="gradient-accent text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="bg-primary text-primary-foreground text-xs font-medium px-2.5 py-0.5 rounded-full">
                     Featured
                   </span>
-                  <span className="text-xs font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                  <span className="text-xs text-muted-foreground border border-border rounded-full px-2.5 py-0.5">
                     {posts[0].category}
                   </span>
                 </div>
-                <h3 className="font-display text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-3 group-hover:text-primary transition-colors">
                   {posts[0].title}
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-5 leading-relaxed">
                   {posts[0].excerpt}
                 </p>
-                <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                  <span className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
+                <div className="flex items-center gap-5 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5" />
                     {posts[0].date}
                   </span>
-                  <span className="flex items-center gap-2">
-                    <Clock className="w-4 h-4" />
+                  <span className="flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5" />
                     {posts[0].readTime}
                   </span>
                 </div>
               </div>
               <div className="flex items-end">
-                <Button variant="hero" className="group/btn">
+                <Button className="gap-2">
                   Read Article
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
             </div>
           </article>
 
           {/* Other Posts */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             {posts.slice(1).map((post, index) => (
               <article
                 key={index}
-                className="glass-card p-6 group hover:scale-[1.02] transition-all duration-300"
+                className="hextra-card group"
               >
-                <span className="inline-block text-xs font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full mb-4">
+                <span className="inline-block text-xs text-muted-foreground border border-border rounded-full px-2.5 py-0.5 mb-3">
                   {post.category}
                 </span>
-                <h3 className="font-display text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-semibold tracking-tight mb-2 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2 leading-relaxed">
                   {post.excerpt}
                 </p>
-                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <div className="flex items-center gap-4 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1">
                     <Calendar className="w-3 h-3" />
                     {post.date}
@@ -124,9 +120,9 @@ const Blog = () => {
 
           {/* View All */}
           <div className="text-center mt-10">
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="gap-2">
               View All Posts
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
         </div>
